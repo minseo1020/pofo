@@ -39,6 +39,65 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MS | Portfolio</title>
     <link rel="stylesheet" href="style.css">
+
+    <!-- 프로필 사진 레이아웃 및 배너 스타일 설정을 위한 CSS 추가 -->
+    <style>
+        .about-wrapper {
+            display: flex;
+            align-items: flex-start;
+            gap: 40px;
+            margin-top: 20px;
+        }
+        .profile-side {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            flex-shrink: 0;
+        }
+        .profile-img-container {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 3px solid #2b6cb0;
+        }
+        .profile-img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        /* 사진 아래 배치될 이동 배너 스타일 */
+        .link-banner {
+            display: inline-block;
+            width: 180px;
+            padding: 10px 0;
+            background-color: #2b6cb0;
+            color: #ffffff;
+            text-decoration: none;
+            text-align: center;
+            font-size: 0.85rem;
+            font-weight: 600;
+            border-radius: 6px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: background-color 0.2s ease, transform 0.2s ease;
+        }
+        .link-banner:hover {
+            background-color: #1a4975;
+            transform: translateY(-1px);
+        }
+        .about-content {
+            flex-grow: 1;
+            line-height: 1.7;
+        }
+        @media (max-width: 768px) {
+            .about-wrapper {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+        }
+    </style>
 </head>
 <body>
 
@@ -66,12 +125,28 @@
     <section id="about" class="about">
         <div class="container">
             <h2>About Me</h2>
-            <div class="about-content">
-                <p>
-                    단순한 감이나 감각에 의존하는 마케팅이 아닌, <strong>철저한 데이터 분석과 가설 검증</strong>을 통해 문제를 해결하는 것을 즐깁니다. 
-                    사용자의 여정을 추적하고 이커머스 플랫폼의 전환율을 최적화(CRO)하는 과정에서 보람을 느낍니다.
-                </p>
+            
+            <div class="about-wrapper">
+                <!-- 왼쪽/상단: 사진 및 사진 아래 배너 영역 -->
+                <div class="profile-side">
+                    <div class="profile-img-container">
+                        <img src="images/고양이.png" alt="프로필 사진">
+                    </div>
+                    <!-- 사진 바로 아래에 배치된 이동 배너 (새 창 열기 적용) -->
+                    <a href="https://www.inhatc.ac.kr" target="_blank" rel="noopener noreferrer" class="link-banner">
+                        INHATC 바로가기
+                    </a>
+                </div>
+
+                <!-- 오른쪽/하단: 기존 자기소개 본문 내용 -->
+                <div class="about-content">
+                    <p>
+                        단순한 감이나 감각에 의존하는 마케팅이 아닌, <strong>철저한 데이터 분석과 가설 검증</strong>을 통해 문제를 해결하는 것을 즐깁니다. 
+                        사용자의 여정을 추적하고 이커머스 플랫폼의 전환율을 최적화(CRO)하는 과정에서 보람을 느낍니다.
+                    </p>
+                </div>
             </div>
+
         </div>
     </section>
 
